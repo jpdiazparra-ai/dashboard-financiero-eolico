@@ -85,7 +85,7 @@ fig_acum = px.line(
 st.plotly_chart(fig_acum, use_container_width=True)
 
 # --- GRAFICO 3: Pie chart distribución por objeto ---
-st.subheader("Distribución de Gasto por Denominación de Objeto (%)")
+st.subheader("Distribución del Gasto por Centro de Costo (%)")
 dist_objeto = (
     df_filtrado.groupby("Denominación del objeto")["Val/Mon.so.CO"]
     .sum()
@@ -94,7 +94,7 @@ dist_objeto = (
 )
 fig_pie = px.pie(
     dist_objeto, values="Val/Mon.so.CO", names="Denominación del objeto",
-    title="Distribución de Gasto por Denominación de Objeto"
+    title="Participación de Cada Centro de Costo en el Gasto"
 )
 st.plotly_chart(fig_pie, use_container_width=True)
 
